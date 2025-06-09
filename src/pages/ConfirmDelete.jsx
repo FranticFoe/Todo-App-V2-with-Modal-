@@ -20,22 +20,20 @@ export default function DeleteButton({ id }) {
             </Button >
 
             <Modal show={showModal} onHide={() => setShowModal(false)} centered>
-                <Modal.Header closeButton>
-                    <i class="bi bi-exclamation-triangle"></i>
+                <Modal.Header className="flex-column text-center border-0" >
+                    <i className="bi bi-exclamation-triangle text-warning display-1 mb-4"></i>
                     <Modal.Title>
                         Confirm Deletion
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body className="d-flex flex-row align-items-center">
+                <Modal.Body className="text-center border-0">
                     Are you sure you want to delete this task?
                 </Modal.Body>
-                <Modal.Footer>
+                <Modal.Footer className="d-flex justify-content-between w-100 border-0 mt-3 ">
                     <Button variant="secondary" onClick={() => setShowModal(false)}>Cancel</Button>
                     <Button variant="danger" onClick={handleDelete}>Delete</Button>
                 </Modal.Footer>
-
-
-            </Modal>
+            </Modal >
         </>
     );
 }
